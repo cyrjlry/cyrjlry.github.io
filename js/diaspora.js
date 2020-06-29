@@ -620,8 +620,8 @@ Diaspora.loading(),
 comment = $('#gitalk-container');
 gitalk = new Valine({
 el: '#gitalk-container' ,
-appId: '你的Leancloud APPID',
-appKey: '你的Leancloud APPKEY',
+appId: 'ymhgdmLwHm1HM030XC3b19Ih-gzGzoHsz',
+appKey: 'eySRy9TvIUhxuH2NTro9BxXt',
 notify:false, # 有人回复时的通知
 verify:true, # 回复时的验证码
 avatar:'robohash',
