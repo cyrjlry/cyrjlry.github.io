@@ -601,12 +601,13 @@ $(function() {
                 break;
             // comment
             case - 1 != tag.indexOf("comment"): 
-				if($('#gitalk-container').data('enable') == true){Diaspora.loading(),
+				if($('#gitalk-container').data('enable') == true){
+Diaspora.loading(),
 comment = $('#gitalk-container');
 gitalk = new Valine({
 el: '#gitalk-container' ,
-appId: 'ymhgdmLwHm1HM030XC3b19Ih-gzGzoHsz',
-appKey: 'eySRy9TvIUhxuH2NTro9BxXt',
+appId: '你的Leancloud APPID',
+appKey: '你的Leancloud APPKEY',
 notify:false, # 有人回复时的通知
 verify:true, # 回复时的验证码
 avatar:'robohash',
