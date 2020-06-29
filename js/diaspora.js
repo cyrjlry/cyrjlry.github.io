@@ -601,36 +601,24 @@ $(function() {
                 break;
             // comment
             case - 1 != tag.indexOf("comment"): 
-				if($('#gitalk-container').data('enable') == true){Diaspora.loading(),
-comment = $('#gitalk-container');
-gitalk = new Valine({
-el: '#gitalk-container' ,
-appId: 'ymhgdmLwHm1HM030XC3b19Ih-gzGzoHsz',
-appKey: 'eySRy9TvIUhxuH2NTro9BxXt',
-notify:false, # 有人回复时的通知
-verify:true, # 回复时的验证码
-avatar:'robohash',
-placeholder: '到此一游'
-})
-$(".comment").removeClass("link")
-gitalk.render('gitalk-container')
-Diaspora.loaded();
-}else{
-Diaspora.loading(),
-comment = $('#gitalk-container');
-gitalk = new Valine({
-el: '#gitalk-container' ,
-appId: 'ymhgdmLwHm1HM030XC3b19Ih-gzGzoHsz',
-appKey: 'eySRy9TvIUhxuH2NTro9BxXt',
-notify:false, # 有人回复时的通知
-verify:true, # 回复时的验证码
-avatar:'robohash',
-placeholder: '到此一游'
-})
-$(".comment").removeClass("link")
-gitalk.render('gitalk-container')
-Diaspora.loaded();
-}
+				if($('#gitalk-container').data('enable') == true){
+					Diaspora.loading(),
+					comment = $('#gitalk-container');
+					gitalk = new Gitalk({
+					  clientID: comment.data('ci'),
+					  clientSecret: comment.data('cs'),
+					  repo: comment.data('r'),
+					  owner: comment.data('o'),
+					  admin: comment.data('a'),
+					  id: decodeURI(window.location.pathname),
+					  distractionFreeMode: comment.data('d')
+					})
+					$(".comment").removeClass("link")
+					gitalk.render('gitalk-container')
+					Diaspora.loaded();
+				}else{
+					$('#gitalk-container').html("评论已关闭");
+				}
                 return false;
                 break;
             default:
